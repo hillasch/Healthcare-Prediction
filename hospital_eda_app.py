@@ -152,9 +152,10 @@ if page == PAGES[0]:
     with col_a:
         st.dataframe(pd.DataFrame({'count':vc,'percent':pct.round(2)}), use_container_width=True)
     with col_b:
-        fig=px.bar(x=['Survived (0)','Died (1)'],y=pct.values,
+        pct_sorted = pct.sort_index()  # ensure 0 comes before 1
+        ig=px.bar(x=['Survived (0)','Died (1)'],y=pct_sorted.values,
                    color=['Survived (0)','Died (1)'],color_discrete_sequence=[C1,C2],
-                   labels={'x':'','y':'%'},text=[f"{v:.1f}%" for v in pct.values],**PT)
+                   labels={'x':'','y':'%'},text=[f"{v:.1f}%" for v in pct_sorted.values],**PT)
         fig.update_layout(showlegend=False,height=260); fig.update_traces(textposition='outside')
         st.plotly_chart(fig, use_container_width=True)
 
