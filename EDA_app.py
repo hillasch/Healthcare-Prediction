@@ -294,7 +294,7 @@ Missing values are common in real-world EHR data. They may reflect clinical work
 
         divider()
 
-        st.subheader("Top 20 columns by missing %")
+        st.subheader("Top 10 columns by missing %")
         st.caption("Dashed reference lines mark 20% and 50% missingness thresholds.")
         top40 = miss.head(20).copy()
         pct_vals = [float(v) for v in top40['pct'].tolist()]
