@@ -243,7 +243,6 @@ if page == PAGES[0]:
         "The target is highly imbalanced: 8.6% deaths vs. 91.4% survivors.",
         "Most input features are numeric, with additional binary and categorical variables.",
         "No duplicate patient records were found.",
-        "Modeling implication: evaluation should focus on clinically relevant metrics such as recall, precision, ROC-AUC, and threshold-based decision support rather than accuracy alone.",
     ])
 
 # ── guard ──────────────────────────────────────────────────────────────────────
